@@ -1,0 +1,80 @@
+// Variabel
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Arial', sans-serif;
+
+// Mixin untuk border radius
+@mixin rounded-corners($radius: 5px) {
+  border-radius: $radius;
+}
+
+// Reset dasar
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+// Header
+header {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 1rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+// Konten
+.content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  @include rounded-corners(10px);
+
+  h2 {
+    color: $secondary-color;
+  }
+
+  .primary-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    @include rounded-corners;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+
